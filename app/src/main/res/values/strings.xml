@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">AddressBook</string>
+    <string name="app_name">Address Book</string>
+    <string name="yeni">Yeni</string>
+    <string name="msgtelefonnumarasiyok">Telefon numarası yok.</string>
+    <string name="soyad">Soyad :</string>
+    <string name="ad">Ad :</string>
+    <string name="tel">Telefon :</string>
+    <string name="ekle">Ekle</string>
+    <string name="guncelle">Güncelle</string>
+    <string name="email">E Mail :</string>
+    <string name="msgmailadresiyok">Mail adresi yok.</string>
+    <string name="aramamsgiznigerekli">Arama özelliğini kullanmak istiyorsan izin vermelisin</string>
 </resources>

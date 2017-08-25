@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
-            android:text="Ad :" />
+            android:text="@string/ad" />
 
         <EditText
             android:id="@+id/txtAd"
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
-            android:text="Soyad :" />
+            android:text="@string/soyad" />
 
         <EditText
             android:id="@+id/txtSoyad"
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
-            android:text="Telefon :" />
+            android:text="@string/tel" />
 
         <EditText
             android:id="@+id/txtTelefon"
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.7"
-            android:text="E Mail :" />
+            android:text="@string/email" />
 
         <EditText
             android:id="@+id/txtMail"
@@ -96,12 +96,12 @@
         android:id="@+id/btnEkle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ekle" />
+        android:text="@string/ekle" />
 
     <Button
         android:id="@+id/btnGuncelle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Güncelle" />
+        android:text="@string/guncelle" />
 
 </LinearLayout>
