@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "585905481428",
+    "firebase_url": "https://addressbook-47b1d.firebaseio.com",
+    "project_id": "addressbook-47b1d",
+    "storage_bucket": "addressbook-47b1d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585905481428:android:e248bfacd253ef9d",
+        "android_client_info": {
+          "package_name": "com.example.bariskoc.addressbook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585905481428-b01ukata9qrplgbpat3todb44jre7u02.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bariskoc.addressbook",
+            "certificate_hash": "9170ebfbd3db2634f2f1077046f506b148ded1a6"
+          }
+        },
+        {
+          "client_id": "585905481428-m8m13sblle4kvd43itu735tho7106fng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLxYAv4S0Y8EGu5I0DqvvdSQLnQEY3pHM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585905481428-m8m13sblle4kvd43itu735tho7106fng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

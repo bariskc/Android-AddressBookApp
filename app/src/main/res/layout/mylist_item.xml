@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="0.3"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Baris"
+            android:textSize="25sp"
+            android:id="@+id/viewTxtAd"
+            android:paddingTop="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Koç"
+            android:id="@+id/viewtxtSoyad"
+            android:textSize="25sp"
+            android:paddingTop="8dp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_weight="0.7"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/viewBtnAra"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableBottom="@android:drawable/ic_menu_call" />
+
+        <Button
+            android:id="@+id/viewBtnMail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:drawableBottom="@android:drawable/ic_dialog_email" />
+    </LinearLayout>
+</LinearLayout>
