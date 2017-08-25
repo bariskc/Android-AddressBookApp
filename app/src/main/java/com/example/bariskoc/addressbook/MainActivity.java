@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (TextUtils.isEmpty(gelen.get(pos).getTelefon())) {
-                            Toast.makeText(MainActivity.this, "Telefon numarası yok.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, R.string.msgtelefonnumarasiyok, Toast.LENGTH_SHORT).show();
                         } else {
                             Intent intent = new Intent(Intent.ACTION_CALL);
                             intent.setData(Uri.parse("tel:"+gelen.get(pos).getTelefon()));
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (TextUtils.isEmpty(gelen.get(pos).getMail())) {
-                            Toast.makeText(MainActivity.this, "Mail adresi yok.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, R.string.msgmailadresiyok, Toast.LENGTH_SHORT).show();
                         } else {
                             /*Intent intent = new Intent(Intent.ACTION_SEND);
                             intent.setType("message/rfc822");
@@ -140,12 +140,33 @@ public class MainActivity extends AppCompatActivity {
 
                 txtad.setText(basilacakKisi.getAd());
                 txtsoyad.setText(basilacakKisi.getSoyad());
+
+                txtad.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(MainActivity.this, YeniActivity.class);
+                        intent.putExtra("yeni", false);
+                        intent.putExtra("kisi", gelen.get(pos).getId());
+                        startActivity(intent);
+                    }
+                });
+                txtad.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        showProgressDialog("Lütfen bekleyin", "Kayıt siliniyor");
+                        database = FirebaseDatabase.getInstance();
+                        myRef = database.getReference().child("kisiler").child(gelen.get(pos).getId());
+                        myRef.removeValue();
+                        dbGetir();
+                        return true;
+                    }
+                });
                 return view;
             }
         };
         listView.setAdapter(baseAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+/*        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 //Kisi seciliKisi = MyContext.Kisiler.get(position);
@@ -171,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
                 dbGetir();
                 return true;
             }
-        });
+        });*/
 
     }
 
@@ -189,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode==100) {
             boolean izinVerildiMi = grantResults[0] == PackageManager.PERMISSION_GRANTED;
             if (!izinVerildiMi) {
-                Toast.makeText(this, "Arama özelliğini kullanmak istiyorsan izin vermelisin", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.aramamsgiznigerekli, Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -197,7 +218,7 @@ public class MainActivity extends AppCompatActivity {
     public void dbGetir() {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference().child("kisiler");
-        showProgressDialog("Lütfen Bekleyin", "Veri tabanı bağlantısı kuruluyor");
+        showProgressDialog("Lütfen bekleyin", "Veri tabanı bağlantısı kuruluyor");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
